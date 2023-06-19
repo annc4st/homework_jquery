@@ -147,12 +147,14 @@ console.log(map.get(2)); // "span"
 //       };
 //    }
 
-let arr = [];
+var arr = [];
 
-for (let i = 0; i <= 2; i++) {
-  arr.push(function() {
-    console.log(i);
-  });
+for (var i = 0; i <= 2; i++) {
+  arr[i] = (function (num) {
+    return function () {
+      console.log(num);
+    };
+  })(i);
 }
 
 arr[0](); // 0
