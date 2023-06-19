@@ -56,30 +56,6 @@ console.log(age4); // 26
 // console.log(mul(1, "str", 2, 3, true)); // 6
 // console.log(mul(null, "str", false, true)); // 0
 
-// practice
-// const myObj = {multiply(...args) {
-//     let product = 1;
-//     let numbers = [];
-//     // перевіримо на наявність чисел
-//     for (let arg of args) {
-//         if (typeof arg === 'number') {
-//             numbers.push(arg);
-//         }
-//     }
-
-//     if (numbers.length <=0) {
-//         return 0;
-
-//     } else{
-//         for (let i = 0; i < numbers.length; i++){
-//             product *= numbers[i];
-//         }
-//         return product;
-//     }
-// }
-// };
-
-// const mul = myObj.multiply;
 
 /* 10-4.
 Змініть код використовуючи стрілкові функції, щоб в коді не використовувалися методи bind().*/
@@ -106,9 +82,7 @@ console.log(age4); // 26
 //    },
 //  };
 
-/* solution  here  the arrow function () => {} is used instead of the function () {}.bind(this) construct.
-# Arrow functions automatically bind the context lexically, so this inside the arrow function refers to the same this value 
-as the surrounding function. Therefore, you don't need to use bind(this) to maintain the proper context.*/
+/* розвязок*/
 
 let server = {
   data: 0,
@@ -184,71 +158,3 @@ for (let i = 0; i <= 2; i++) {
 arr[0](); // 0
 arr[arr.length - 1](); // 2
 
-// *****Lecture arrow funcs
-
-// const appFunc1 = function() {
-//     console.log("Hello");
-// }
-// // rewrite to arrow function
-// const  appFunc2 = ()=> {
-//     console.log("Hello");
-// }
-
-// const fun = function(a, b) {
-//     return a + b;
-// }
-// можна і так
-
-// const fun2 = (a, b) =>  a + b;
-
-// якщо треба додаткові дії чи перевірки
-
-// const fun3 = (a, b) => {
-//     if (a>0) {
-//         return a + b;
-//     }
-// }
-
-//or ternary operator
-// const fun4 = (a, b) => (a> 0) ? a + b : "bad idea";
-
-// let numbers = [1, 2, 3, 4, 55, 21, 88];
-
-// numbers.map( el => {
-//     console.log(el*3);
-// });
-
-// const newN = numbers.map(el => el+1);
-// console.log(newN);
-
-// // when you need to make few actions on your data
-// const newN2 = numbers.sort()
-//                     .filter((el) => el > 5)
-//                     .map((el) => el+2);
-
-// console.log(newN2);
-
-// const minNumb = Math.min(...numbers);
-// console.log(minNumb);
-
-// let numbs2 = [45, 23, 14, 15, 60];
-// const arrConcat = [...numbers, ...numbs2];
-// console.log(arrConcat);
-
-// function Person() {
-//     let self = this;
-//     this.age = 0;
-
-//     setInterval(function growUp() {
-//         self.age ++;
-//     }, 1000);
-// }
-
-// /* with arrow func */
-// function Pers() {
-//     this.age = 0;
-
-//     setInterval(() => {
-//         this.age ++;
-//     }, 1000);
-// }
